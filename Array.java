@@ -1,10 +1,10 @@
-//Creating arrays
+// Creating arrays
 
-//dataType arrayName = new dataType[size];
+// dataType arrayName = new dataType[size];
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void main(String args[]) {
 //         int marks[] = new int[50];
 
@@ -15,11 +15,11 @@
 //     }
 // }
 
-//Input, Output, Update
+// Input, Output, Update
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void main(String args[]) {
 //         int marks[] = new int[50];
 
@@ -49,7 +49,7 @@
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 
 //     public static void updateArray(int marks[]) {
 //         for (int i = 0; i < marks.length; i++) {
@@ -68,11 +68,11 @@
 //     }
 // }
 
-//Linear Search
+// Linear Search
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 
 //     public static int linearSearch(int numbers[], int key) {
 //         for (int i = 0; i < numbers.length; i++) {
@@ -96,11 +96,11 @@
 //     }
 // }
 
-//Linear Search in Menu(String datatype)
+// Linear Search in Menu(String datatype)
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static int linearSearch(String menu[], String key) {
 //         for (int i = 0; i < menu.length; i++) {
 //             if (menu[i] == key) {
@@ -124,11 +124,11 @@
 //     }
 // }
 
-//Largest Number
+// Largest Number
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static int getLargest(int numbers[]) {
 //         int largest = Integer.MIN_VALUE;
 
@@ -146,11 +146,11 @@
 //     }
 // }
 
-//Smallest Number 
+// Smallest Number 
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static int getSmallest(int numbers[]) {
 //         int smallest = Integer.MAX_VALUE;
 
@@ -168,11 +168,11 @@
 //     }
 // }
 
-//Binary Search(only used in sorted data)
+// Binary Search(only used in sorted data)
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 
 //     public static int binarySearch(int numbers[], int key) {
 //         int start = 0, end = numbers.length - 1;
@@ -203,11 +203,11 @@
 //     }
 // }
 
-//Reverse an array
+// Reverse an array
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void reverse(int numbers[]) {
 //         int first = 0, last = numbers.length - 1;
 
@@ -231,11 +231,11 @@
 //     }
 // }
 
-//Pairs in an array
+// Pairs in an array
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void printPairs(int numbers[]) {
 //         // to count total number of pairs
 //         int tp = 0;
@@ -257,11 +257,11 @@
 //     }
 // }
 
-//Print Subarrays
+// Print Subarrays
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void printSubarray(int num[]) {
 //         // total subarrays
 //         int ts = 0;
@@ -286,11 +286,11 @@
 //     }
 // }
 
-//Max Subarray Sum (Brute Force)
+// Max Subarray Sum (Brute Force)
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void maxSubarraySum(int num[]) {
 //         int currSum = 0;
 //         int maxSum = Integer.MIN_VALUE;
@@ -318,11 +318,11 @@
 //     }
 // }
 
-//Max Subarray Sum(Prefix Sum)
+// Max Subarray Sum(Prefix Sum)
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void maxSubarraySum(int num[]) {
 //         int maxSum = Integer.MIN_VALUE;
 //         int currSum = 0;
@@ -357,11 +357,11 @@
 //     }
 // }
 
-//Max Subarray Sum(Kadane's Algorithm)
+// Max Subarray Sum(Kadane's Algorithm)
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void kadanes(int num[]) {
 //         int maxSum = Integer.MIN_VALUE;
 //         int currSum = 0;
@@ -382,51 +382,51 @@
 //     }
 // }
 
-//Trapping Rainwater
+// Trapping Rainwater
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void trappedRainwater(int height[]) {
-    //     int n = height.length;
+//         int n = height.length;
 
-    //     // calculate left max bounndary - array
-    //     int leftMax[] = new int[n];
-    //     leftMax[0] = height[0];
-    //     for (int i = 1; i < n; i++) {
-    //         leftMax[i] = Math.max(height[i], leftMax[i - 1]);
-    //     }
+//         // calculate left max bounndary - array
+//         int leftMax[] = new int[n];
+//         leftMax[0] = height[0];
+//         for (int i = 1; i < n; i++) {
+//             leftMax[i] = Math.max(height[i], leftMax[i - 1]);
+//         }
 
-    //     // calculate right max boundary - array
-    //     int rightMax[] = new int[n];
-    //     rightMax[n - 1] = height[n - 1];
-    //     for (int i = n - 2; i >= 0; i--) {
-    //         rightMax[i] = Math.max(height[i], rightMax[i + 1]);
-    //     }
+//         // calculate right max boundary - array
+//         int rightMax[] = new int[n];
+//         rightMax[n - 1] = height[n - 1];
+//         for (int i = n - 2; i >= 0; i--) {
+//             rightMax[i] = Math.max(height[i], rightMax[i + 1]);
+//         }
 
-    //     // loop
-    //     int trappedWater = 0;
-    //     for (int i = 0; i < n; i++) {
-    //         // waterLevel = min(leftmax bound, rightmax bound)
-    //         int waterLevel = Math.min(leftMax[i], rightMax[i]);
+//         // loop
+//         int trappedWater = 0;
+//         for (int i = 0; i < n; i++) {
+//             // waterLevel = min(leftmax bound, rightmax bound)
+//             int waterLevel = Math.min(leftMax[i], rightMax[i]);
 
-    //         // trappedWater = waterLevel - height[i]
-    //         trappedWater += waterLevel - height[i];
-    //     }
-    //     System.out.println("Total water trapped is: " + trappedWater);
-    // }
+//             // trappedWater = waterLevel - height[i]
+//             trappedWater += waterLevel - height[i];
+//         }
+//         System.out.println("Total water trapped is: " + trappedWater);
+//     }
 
-    // public static void main(String args[]) {
-    //     int height[] = { 4, 2, 0, 6, 3, 2, 5 };
-    //     trappedRainwater(height);
-    // }
+//     public static void main(String args[]) {
+//         int height[] = { 4, 2, 0, 6, 3, 2, 5 };
+//         trappedRainwater(height);
+//     }
 // }
 
-//Buy and Sell Stocks
+// Buy and Sell Stocks
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void stocks(int prices[]) {
 //         int buyPrice = Integer.MAX_VALUE;
 //         int maxProfit = 0;
@@ -451,7 +451,7 @@
 
 // import java.util.*;
 
-// public class Arrays{
+// public class Array{
 //     public static boolean duplicate(int nums[]){
 //         for(int i=0;i<nums.length;i++){
 //             for (int j = i+1; j < nums.length; j++) {
@@ -470,10 +470,10 @@
 
 // Question 2: Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
 
-//linear search method
+// linear search method
 // import java.util.*;
 
-// public class Arrays{
+// public class Array{
 //     public static int numIndex(int nums[],int target){
 //         for (int i = 0; i < nums.length; i++) {
 //             if(nums[i] == target){
@@ -493,7 +493,7 @@
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array { 
 //     public static void stock(int prices[]) {
 //         int maxProfit = 0;
 //         int buyPrice = Integer.MAX_VALUE;
@@ -518,7 +518,7 @@
 
 // import java.util.*;
 
-// public class Arrays {
+// public class Array {
 //     public static void trappedRainwater(int height[]) {
 //         int n = height.length;
 //         // left array

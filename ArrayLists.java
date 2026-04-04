@@ -389,7 +389,7 @@
 //     }
 // }
 
-//Given an integer Arraylist nums, return true if the given list is monotonic, or false otherwise.
+//Question 1 :Given an integer Arraylist nums, return true if the given list is monotonic, or false otherwise.
 //Sample Input 1: nums = [1,2,2,3] Sample Output 1: true
 //Sample Input 2: nums = [6,5,4,4] Sample Output 2: true
 //Sample Input 3: nums = [1,3,2] Sample Output 3: false
@@ -423,42 +423,133 @@
 //     }
 // }
 
-//Question 2 :Lonely Numbers in ArrayList(MEDIUM)You are given an integer array list nums. A number x is lonely when it appears only once,and no adjacent numbers (i.e. x + 1 and x - 1) appear in the arraylist.Return all lonely numbers in nums. You may return the answer in any order.
+//Question 2 :Lonely Numbers in ArrayList(MEDIUM): You are given an integer array list nums. A number x is lonely when it appears only once,and no adjacent numbers (i.e. x + 1 and x - 1) appear in the arraylist.Return all lonely numbers in nums. You may return the answer in any order.
 // Sample Input 1: nums = [10,6,5,8]   Sample Output 1: [10,8]
+
+// import java.util.*;
+
+// public class ArrayLists {
+//     public static ArrayList<Integer> lonelyNumber(ArrayList<Integer> nums) {
+//         ArrayList<Integer> result = new ArrayList<>();
+//         Collections.sort(nums);
+
+//         int n = nums.size();
+
+//         for (int i = 0; i < n; i++) {
+//             int curr = nums.get(i);
+
+//             // check duplicate
+//             if ((i > 0 && nums.get(i - 1) == curr) ||
+//                     (i < n - 1 && nums.get(i + 1) == curr)) {
+//                 continue;
+//             }
+
+//             // check x-1 and x+1
+//             boolean hasPrev = (i > 0 && nums.get(i - 1) == curr - 1);
+//             boolean hasNext = (i < n - 1 && nums.get(i + 1) == curr + 1);
+
+//             if (!hasPrev && !hasNext) {
+//                 result.add(curr);
+//             }
+//         }
+
+//         return result;
+
+//     }
+
+//     public static void main(String[] args) {
+//         // ArrayList<Integer> nums = new ArrayList<>();
+//         // nums.add(10);
+//         // nums.add(6);
+//         // nums.add(5);
+//         // nums.add(8);
+
+//         // Aise bhi likh sakte hai
+//          ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(10, 6, 5, 8));
+
+//         System.out.println(lonelyNumber(nums));
+//     }
+
+// }
+
+// Question 3 :Most Frequent Number following Key(EASY): You are given an integer Arraylist nums. You are also given an integer key, which is present in nums.For every unique integer target in nums,count the number of times target immediately follows an occurrence of key in nums. In other words, count the number of indices i such that:0 <= i <= nums.size() - 2,nums.get(i) == key and,nums.get(i+1) == target.Return the target with the maximum count.(Assumption- that the target with maximum count isunique.)
+// Sample Input 1:nums = [1,100,200,1,100], key = 1 Sample Output 1:  100
+// Sample Input 2: nums = [2,2,2,2,3], key = 2 Sample Output 2:  2
+
+// import java.util.*;
+
+// public class ArrayLists {
+//     public static int frequentNumber(ArrayList<Integer> nums, int key) {
+//         int maxCount = 0;
+//         int result = -1;
+
+//         for (int i = 0; i < nums.size(); i++) {
+//             int count = 0;
+
+//             // count how many times nums[i] comes after key
+//             for (int j = 0; j < nums.size() - 1; j++) {
+//                 if (nums.get(j) == key && nums.get(j + 1) == nums.get(i)) {
+//                     count++;
+//                 }
+//             }
+
+//             // update max frequency
+//             if (count > maxCount) {
+//                 maxCount = count;
+//                 result = nums.get(i);
+//             }
+//         }
+
+//         return result;
+//     }
+
+//     public static void main(String[] args) {
+//         ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(1, 100, 200, 1, 100));
+//         int key = 1;
+//         System.out.println(frequentNumber(nums, key));
+
+//     }
+// }
+
+// Question 4 :Beautiful ArrayList(MEDIUM): An Arraylist nums of size n is beautiful if:nums is a permutation of the integers in the range [1, n].For every 0 <= i < j < n,there is no index k with i < k < j where 2*nums.get(k) == nums.get(i) + nums.get(j). Given the integer n,return any beautiful arraylist nums of size n.There will beat least one valid answer for the given n
+//Sample Input 1: n = 4Sample Output 1:  [2,1,4,3]Sample Input 2: n = 5 Sample Output 2:  [3,1,2,5,4]
+
 
 import java.util.*;
 
 public class ArrayLists {
-    public static ArrayList<Integer> lonelyNumber(ArrayList<Integer> nums) {
-        ArrayList<Integer> list = new ArrayList<>();
-        Collections.sort(nums);
 
-        for (int i = 1; i < nums.size() - 1; i++) {
-            int curr = nums.get(i);
-            if (nums.get(i - 1) + 1 < curr && curr < nums.get(i + 1) + 1) {
-                list.add(curr);
+    public static ArrayList<Integer> beautifulArray(int n) {
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(1);
+
+        while (result.size() < n) {
+            ArrayList<Integer> temp = new ArrayList<>();
+
+            // Generate odd numbers
+            for (int i = 0; i < result.size(); i++) {
+                int x = result.get(i);
+                if (2 * x - 1 <= n) {
+                    temp.add(2 * x - 1);
+                }
             }
 
-            if ((i > 0 && nums.get(i - 1) == curr) || (i < nums.size() - 1 && nums.get(i + 1) == curr)) {
-                list.add(curr);
+            // Generate even numbers
+            for (int i = 0; i < result.size(); i++) {
+                int x = result.get(i);
+                if (2 * x <= n) {
+                    temp.add(2 * x);
+                }
             }
+
+            result = temp;
         }
 
-        return list;
-
+        return result;
     }
 
     public static void main(String[] args) {
-        ArrayList<Integer> nums = new ArrayList<>();
-        nums.add(10);
-        nums.add(6);
-        nums.add(5);
-        nums.add(8);
-
-        //Array file hai folder mein isliye ye chal nhi yaha
-        //ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(10, 6, 5, 8));
-
-        System.out.println(lonelyNumber(nums));
+        int n = 5;
+        System.out.println(beautifulArray(n));
     }
-
 }
