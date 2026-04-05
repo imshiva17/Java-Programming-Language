@@ -424,7 +424,7 @@
 // }
 
 //Question 2 :Lonely Numbers in ArrayList(MEDIUM): You are given an integer array list nums. A number x is lonely when it appears only once,and no adjacent numbers (i.e. x + 1 and x - 1) appear in the arraylist.Return all lonely numbers in nums. You may return the answer in any order.
-// Sample Input 1: nums = [10,6,5,8]   Sample Output 1: [10,8]
+//Sample Input 1: nums = [10,6,5,8]   Sample Output 1: [10,8]
 
 // import java.util.*;
 
@@ -484,19 +484,19 @@
 //         int result = -1;
 
 //         for (int i = 0; i < nums.size(); i++) {
+//             int current = nums.get(i);
 //             int count = 0;
 
-//             // count how many times nums[i] comes after key
+//             // Count how many times current appears after key
 //             for (int j = 0; j < nums.size() - 1; j++) {
-//                 if (nums.get(j) == key && nums.get(j + 1) == nums.get(i)) {
+//                 if (nums.get(j) == key && nums.get(j + 1) == current) {
 //                     count++;
 //                 }
 //             }
 
-//             // update max frequency
 //             if (count > maxCount) {
 //                 maxCount = count;
-//                 result = nums.get(i);
+//                 result = current;
 //             }
 //         }
 
@@ -506,14 +506,13 @@
 //     public static void main(String[] args) {
 //         ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(1, 100, 200, 1, 100));
 //         int key = 1;
-//         System.out.println(frequentNumber(nums, key));
 
+//         System.out.println(frequentNumber(nums, key)); // Output: 100
 //     }
 // }
 
 // Question 4 :Beautiful ArrayList(MEDIUM): An Arraylist nums of size n is beautiful if:nums is a permutation of the integers in the range [1, n].For every 0 <= i < j < n,there is no index k with i < k < j where 2*nums.get(k) == nums.get(i) + nums.get(j). Given the integer n,return any beautiful arraylist nums of size n.There will beat least one valid answer for the given n
-//Sample Input 1: n = 4Sample Output 1:  [2,1,4,3]Sample Input 2: n = 5 Sample Output 2:  [3,1,2,5,4]
-
+//Sample Input 1: n = 4 Sample Output 1:  [2,1,4,3]   Sample Input 2: n = 5 Sample Output 2:  [3,1,2,5,4]
 
 import java.util.*;
 
