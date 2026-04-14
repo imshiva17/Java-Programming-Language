@@ -212,80 +212,80 @@
 
 //leetcode 1295. Given an array nums of integers, return how many of them contain an even number of digits
 
-// import java.util.*;
-
-// public class LinearSearch {
-
-//     public static int totalEvenDigit(int arr[]) {
-//         int even = 0;
-
-//         for (int i = 0; i < arr.length; i++) {
-//             int count = 0;
-//             int digit = arr[i];
-//             int original = digit;
-
-//             if (digit == 0) {
-//                 count = 1;
-//             }
-//             while (digit > 0) {
-//                 count++;
-//                 digit = digit / 10;
-//             }
-
-//             // //to find digits(shortcut way)
-//             // if (digit == 0) {
-//             //     count = 1;
-//             // } else {
-//             //     count = (int)(Math.log10(digit)) + 1;  // shortcut
-//             // }
-
-//             System.out.println(original + " : " + count);
-
-//             if (count % 2 == 0) {
-//                 even++;
-//             }
-
-//         }
-//         System.out.println("Total even no. of digits are: " + even);
-//         return even;
-//     }
-
-//     public static void main(String[] args) {
-//         int arr[] = { 12, 345, 2, 6, 7896 };
-
-//         totalEvenDigit(arr);
-//     }
-// }
-
-//leetcode 1672. You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has. A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
-
 import java.util.*;
 
 public class LinearSearch {
 
-    public static int wealth(int accounts[][]) {
-        int wealth = Integer.MIN_VALUE;
+    public static int totalEvenDigit(int arr[]) {
+        int even = 0;
 
-        for (int i = 0; i < accounts.length; i++) {
-            int sum = 0;
-            for (int j = 0; j < accounts[i].length; j++) {
-                sum += accounts[i][j];
+        for (int i = 0; i < arr.length; i++) {
+            int count = 0;
+            int digit = arr[i];
+            int original = digit;
+
+            if (digit == 0) {
+                count = 1;
             }
-            System.out.println(sum);
-            wealth = Math.max(wealth, sum);
-        }
+            while (digit > 0) {
+                count++;
+                digit = digit / 10;
+            }
 
-        System.out.println("Richest with wealth: " + wealth);
-        return wealth;
+            // //to find digits(shortcut way)
+            // if (digit == 0) {
+            //     count = 1;
+            // } else {
+            //     count = (int)(Math.log10(digit)) + 1;  // shortcut
+            // }
+
+            System.out.println(original + " : " + count);
+
+            if (count % 2 == 0) {
+                even++;
+            }
+
+        }
+        System.out.println("Total even no. of digits are: " + even);
+        return even;
     }
 
     public static void main(String[] args) {
-        int accounts[][] = {
-                { 1, 5 },
-                { 7, 3 },
-                { 3, 5 },
-        };
+        int arr[] = { 12, 345, 2, 6, 7896 };
 
-        wealth(accounts);
+        totalEvenDigit(arr);
     }
 }
+
+//leetcode 1672. You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the i​​​​​​​​​​​th​​​​ customer has in the j​​​​​​​​​​​th​​​​ bank. Return the wealth that the richest customer has. A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
+
+// import java.util.*;
+
+// public class LinearSearch {
+
+//     public static int wealth(int accounts[][]) {
+//         int wealth = Integer.MIN_VALUE;
+
+//         for (int i = 0; i < accounts.length; i++) {
+//             int sum = 0;
+//             for (int j = 0; j < accounts[i].length; j++) {
+//                 sum += accounts[i][j];
+//             }
+//             System.out.println(sum);
+//             wealth = Math.max(wealth, sum);
+//         }
+
+//         System.out.println("Richest with wealth: " + wealth);
+//         return wealth;
+//     }
+
+//     public static void main(String[] args) {
+//         int accounts[][] = {
+//                 { 1, 5 },
+//                 { 7, 3 },
+//                 { 3, 5 },
+//         };
+
+//         wealth(accounts);
+//     }
+// }
