@@ -348,6 +348,8 @@ public class TwoDArray {
                 { 4, 5, 6 },
         };
 
+
+        
         transpose(matrix);
     }
 }
