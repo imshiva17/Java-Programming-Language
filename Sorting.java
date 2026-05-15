@@ -110,29 +110,83 @@
 
 //OR
 
+// import java.util.*;
+
+// public class Sorting {
+
+//     public static void selectionSort(int arr[]) {
+//         for (int i = 0; i < arr.length - 1; i++) {
+//             int minIndex = i;
+//             for (int j = i + 1; j < arr.length; j++) {
+//                 if (arr[minIndex] > arr[j]) {
+//                     minIndex = j;
+//                 }
+//             }
+
+//             int temp = arr[minIndex];
+//             arr[minIndex] = arr[i];
+//             arr[i] = temp;
+
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = { 4, 5, 1, 2, 3 };
+//         selectionSort(arr);
+//         System.out.println(Arrays.toString(arr));
+//     }
+// }
+
+// Insertion Sort
+
+// import java.util.*;
+
+// public class Sorting {
+
+//     public static void insertionSort(int arr[]) {
+//         for (int i = 0; i < arr.length - 1; i++) {
+//             for (int j = i + 1; j > 0; j--) {
+//                 if (arr[j] < arr[j - 1]) {
+//                     int temp = arr[j - 1];
+//                     arr[j - 1] = arr[j];
+//                     arr[j] = temp;
+//                 } else {
+//                     break;
+//                 }
+//             }
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = { 4, 5, 1, 2, 3 };
+//         insertionSort(arr);
+//         System.out.println(Arrays.toString(arr));
+//     }
+// }
+
+//OR
+
 import java.util.*;
 
 public class Sorting {
 
-    public static void selectionSort(int arr[]) {
-        for (int i = 0; i < arr.length - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[minIndex] > arr[j]) {
-                    minIndex = j;
-                }
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int curr = arr[i];
+            int prev = i - 1;
+
+            while (prev >= 0 && arr[prev] > curr) {
+                arr[prev + 1] = arr[prev];
+                prev--;
             }
 
-            int temp = arr[minIndex];
-            arr[minIndex] = arr[i];
-            arr[i] = temp;
-
+            arr[prev + 1] = curr;
         }
     }
 
     public static void main(String[] args) {
         int arr[] = { 4, 5, 1, 2, 3 };
-        selectionSort(arr);
+        insertionSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 }
