@@ -166,27 +166,95 @@
 
 //OR
 
-import java.util.*;
+// import java.util.*;
 
-public class Sorting {
+// public class Sorting {
 
-    public static void insertionSort(int[] arr) {
-        for (int i = 1; i < arr.length; i++) {
-            int curr = arr[i];
-            int prev = i - 1;
+//     public static void insertionSort(int[] arr) {
+//         for (int i = 1; i < arr.length; i++) {
+//             int curr = arr[i];
+//             int prev = i - 1;
 
-            while (prev >= 0 && arr[prev] > curr) {
-                arr[prev + 1] = arr[prev];
-                prev--;
-            }
+//             while (prev >= 0 && arr[prev] > curr) {
+//                 arr[prev + 1] = arr[prev];
+//                 prev--;
+//             }
 
-            arr[prev + 1] = curr;
-        }
-    }
+//             arr[prev + 1] = curr;
+//         }
+//     }
 
-    public static void main(String[] args) {
-        int arr[] = { 4, 5, 1, 2, 3 };
-        insertionSort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
-}
+//     public static void main(String[] args) {
+//         int arr[] = { 4, 5, 1, 2, 3 };
+//         insertionSort(arr);
+//         System.out.println(Arrays.toString(arr));
+//     }
+// }
+
+//Inbuilt Sort
+
+// import java.util.*;
+
+// public class Sorting {
+//     public static void main(String[] args) {
+//         int arr[] = { 4, 5, 1, 2, 3 };
+
+//         // Direct Sort - O(nlogn)
+//         // Arrays.sort(arr);
+//         // System.out.println(Arrays.toString(arr));
+
+//         // Sort in range
+//         Arrays.sort(arr,0,3);
+//         System.out.println(Arrays.toString(arr));
+
+//     }
+// }
+
+// import java.util.*;
+
+// public class Sorting {
+//     public static void main(String[] args) {
+//         //Collections works on Only object datatype
+//         Integer arr[] = { 4, 5, 1, 2, 3 };
+
+//         // Direct reverse Sort
+//         // Arrays.sort(arr, Collections.reverseOrder());
+//         // System.out.println(Arrays.toString(arr));
+
+//         //  Reverse Sort in range
+//         Arrays.sort(arr,0,3,  Collections.reverseOrder());
+//         System.out.println(Arrays.toString(arr));
+
+//     }
+// }
+
+
+//Cycle Sort
+
+// import java.util.*;
+
+// public class Sorting {
+
+//     public static void cycleSort(int arr[]) {
+//         // index = value-1
+
+//         int i = 0;
+//         while (i < arr.length) {
+//             int correct = arr[i] - 1;
+//             if (arr[i] != arr[correct]) {
+//                 int temp = arr[i];
+//                 arr[i] = arr[correct];
+//                 arr[correct] = temp;
+//             } else {
+//                 i++;
+//             }
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = { 3, 5, 2, 1, 4 };
+//         cycleSort(arr);
+//         System.out.println(Arrays.toString(arr));
+
+//     }
+// }
