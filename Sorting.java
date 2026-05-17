@@ -228,7 +228,6 @@
 //     }
 // }
 
-
 //Cycle Sort
 
 // import java.util.*;
@@ -258,3 +257,75 @@
 
 //     }
 // }
+
+//Counting Sort
+
+// import java.util.*;
+
+// public class Sorting {
+//     public static void countingSort(int arr[]) {
+//         int max = Integer.MIN_VALUE;
+//         for (int i = 0; i < arr.length; i++) {
+//             max = Math.max(max, arr[i]);
+//         }
+
+//         int count[] = new int[max + 1];
+
+//         for (int i = 0; i < arr.length; i++) {
+//             count[arr[i]]++;
+//         }
+
+//         int j = 0;
+//         for (int i = 0; i < count.length; i++) {
+//             while (count[i] > 0) {
+//                 arr[j] = i;
+//                 j++;
+//                 count[i]--;
+//             }
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = { 1, 4, 1, 3, 2, 4, 3, 7 };
+
+//         countingSort(arr);
+//         System.out.println(Arrays.toString(arr));
+//     }
+// }
+
+//268. Missing Number: Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
+
+import java.util.*;
+
+public class Sorting {
+
+    public static int missingNumber(int arr[]) {
+        int i = 0;
+        while (i < arr.length) {
+            int correct = arr[i];
+            if (arr[i] < arr.length && arr[i] != arr[correct]) {
+                int temp = arr[i];
+                arr[i] = arr[correct];
+                arr[correct] = temp;
+            } else {
+                i++;
+            }
+
+        }
+
+        // Search for first missing number
+        for (int j = 0; j < arr.length; j++) {
+            if (arr[j] != j) {
+                return j;
+            }
+        }
+
+        return arr.length;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 4, 0, 2, 1 };
+        System.out.println(missingNumber(arr));
+
+    }
+}
