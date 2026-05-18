@@ -295,37 +295,113 @@
 
 //268. Missing Number: Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.
 
+// import java.util.*;
+
+// public class Sorting {
+
+//     public static int missingNumber(int arr[]) {
+//         int i = 0;
+//         while (i < arr.length) {
+//             int correct = arr[i];
+//             if (arr[i] < arr.length && arr[i] != arr[correct]) {
+//                 int temp = arr[i];
+//                 arr[i] = arr[correct];
+//                 arr[correct] = temp;
+//             } else {
+//                 i++;
+//             }
+
+//         }
+
+//         // Search for first missing number
+//         for (int j = 0; j < arr.length; j++) {
+//             if (arr[j] != j) {
+//                 return j;
+//             }
+//         }
+
+//         return arr.length;
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = { 4, 0, 2, 1 };
+//         System.out.println(missingNumber(arr));
+
+//     }
+// }
+
+//448. Find All Numbers Disappeared in an Array: Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
+
+// import java.util.*;
+
+// public class Sorting {
+//     public static ArrayList<Integer> findDisappearedNumbers(int[] nums) {
+
+//         int i = 0;
+//         while (i < nums.length) {
+//             int correct = nums[i] - 1;
+//             if (nums[i] != nums[correct]) {
+//                 int temp = nums[i];
+//                 nums[i] = nums[correct];
+//                 nums[correct] = temp;
+
+//             } else {
+//                 i++;
+//             }
+//         }
+
+//         ArrayList<Integer> ans = new ArrayList<>();
+
+//         for (int j = 0; j < nums.length; j++) {
+//             if (nums[j] != j + 1) {
+//                 ans.add(j + 1);
+//             }
+//         }
+//         return ans;
+//     }
+
+//     public static void main(String[] args) {
+//         int nums[] = { 4, 3, 2, 7, 8, 2, 3, 1 };
+//         System.out.println(findDisappearedNumbers(nums));
+//     }
+// }
+
+//287. Find the Duplicate Number: Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive. There is only one repeated number in nums, return this repeated number.
+
+// Example 1:
+// Input: nums = [1,3,4,2,2]
+// Output: 2
+
+// Example 2:
+// Input: nums = [3,1,3,4,2]
+// Output: 3
+
 import java.util.*;
 
 public class Sorting {
-
-    public static int missingNumber(int arr[]) {
+    public static int findDuplicate(int[] arr) {
         int i = 0;
         while (i < arr.length) {
-            int correct = arr[i];
-            if (arr[i] < arr.length && arr[i] != arr[correct]) {
-                int temp = arr[i];
-                arr[i] = arr[correct];
-                arr[correct] = temp;
+            if (arr[i] != i + 1) {
+                int correct = arr[i] - 1;
+                if (arr[i] != arr[correct]) {
+                    int temp = arr[i];
+                    arr[i] = arr[correct];
+                    arr[correct] = temp;
+
+                } else {
+                    return arr[i];
+                }
             } else {
                 i++;
             }
-
         }
+        return -1;
 
-        // Search for first missing number
-        for (int j = 0; j < arr.length; j++) {
-            if (arr[j] != j) {
-                return j;
-            }
-        }
-
-        return arr.length;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 4, 0, 2, 1 };
-        System.out.println(missingNumber(arr));
-
+        int arr[] = { 1, 3, 4, 2, 2 };
+        System.out.println(findDuplicate(arr));
     }
 }
