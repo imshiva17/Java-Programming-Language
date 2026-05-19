@@ -376,32 +376,77 @@
 // Input: nums = [3,1,3,4,2]
 // Output: 3
 
+// import java.util.*;
+
+// public class Sorting {
+//     public static int findDuplicate(int[] arr) {
+//         int i = 0;
+//         while (i < arr.length) {
+//             if (arr[i] != i + 1) {
+//                 int correct = arr[i] - 1;
+//                 if (arr[i] != arr[correct]) {
+//                     int temp = arr[i];
+//                     arr[i] = arr[correct];
+//                     arr[correct] = temp;
+
+//                 } else {
+//                     return arr[i];
+//                 }
+//             } else {
+//                 i++;
+//             }
+//         }
+//         return -1;
+
+//     }
+
+//     public static void main(String[] args) {
+//         int arr[] = { 1, 3, 4, 2, 2 };
+//         System.out.println(findDuplicate(arr));
+//     }
+// }
+
+//442. Find All Duplicates in an Array: Given an integer array nums of length n where all the integers of nums are in the range [1, n] and each integer appears at most twice, return an array of all the integers that appears twice.
+
+//Example 1:
+// Input: nums = [4,3,2,7,8,2,3,1]
+// Output: [2,3]
+
+// Example 2:
+// Input: nums = [1,1,2]
+// Output: [1]
+
 import java.util.*;
 
 public class Sorting {
-    public static int findDuplicate(int[] arr) {
-        int i = 0;
-        while (i < arr.length) {
-            if (arr[i] != i + 1) {
-                int correct = arr[i] - 1;
-                if (arr[i] != arr[correct]) {
-                    int temp = arr[i];
-                    arr[i] = arr[correct];
-                    arr[correct] = temp;
+    public static ArrayList<Integer> findAllDuplicates(int nums[]) {
 
-                } else {
-                    return arr[i];
-                }
+        int i = 0;
+        while (i < nums.length) {
+            int correct = nums[i] - 1;
+            if (nums[i] != nums[correct]) {
+                int temp = nums[i];
+                nums[i] = nums[correct];
+                nums[correct] = temp;
+
             } else {
                 i++;
             }
         }
-        return -1;
+        ArrayList<Integer> ans = new ArrayList<>();
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != j + 1) {
+                ans.add(nums[j]);
+            }
+        }
 
+        return ans;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 3, 4, 2, 2 };
-        System.out.println(findDuplicate(arr));
+        int nums[] = { 4, 3, 2, 7, 8, 2, 3, 1 };
+
+        System.out.println(findAllDuplicates(nums));
+
     }
 }
