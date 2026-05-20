@@ -50,12 +50,32 @@
 
 //Concatenation: means joining two things
 
+// public class Strings {
+
+//     public static void main(String[] args) {
+//         String firstName = "Shiva";
+//         String lastName = "Rajak";
+//         String fullName = firstName + " " + lastName;
+//         System.out.println(fullName);
+//     }
+// }
+
+
+// charAt() Method
+
 public class Strings {
 
     public static void main(String[] args) {
-        String firstName = "Shiva";
-        String lastName = "Rajak";
-        String fullName = firstName + " " + lastName;
-        System.out.println(fullName);
+        String fullName = "Shiva Rajak";
+
+        System.out.println(fullName.charAt(0));   //O/P: S
+        System.out.println(fullName.charAt(1));   //O/P: h
+
+        //for every charaters
+
+        for (int i = 0; i < fullName.length(); i++) {
+            System.out.print(fullName.charAt(i)+" ");  //O/P: S h i v a   R a j a k
+        }
+        System.out.println();
     }
 }
