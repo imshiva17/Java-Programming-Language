@@ -1,5 +1,7 @@
 // Strings
 
+// Syntax
+
 // public class Strings {
 //     public static void main(String[] args) {
 //         // Syntax
@@ -30,3 +32,19 @@
 //         // O/P: shiva rajak
 //     }
 // }
+
+
+//To find String length - length()
+
+import java.util.*;
+
+public class Strings {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String name = "Shiva Rajak";
+        int length = name.length();    //it count space also
+        System.out.println(length);
+    }
+}
