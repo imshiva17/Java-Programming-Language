@@ -100,7 +100,6 @@
 //     }
 // }
 
-
 //Shortest Route
 // import java.util.*;
 
@@ -129,7 +128,6 @@
 //             }
 //         }
 
-
 //         int X2 = x*x;
 //         int Y2 = y*y;
 
@@ -145,31 +143,53 @@
 
 //String Function for compare - equals()
 
+// import java.util.*;
+
+// public class Strings{
+//     public static void main(String[] args) {
+//         String s1 = "Shiva";
+//         String s2 = "Shiva";
+//         String s3 = new String ("Shiva");
+
+//         // if(s1 == s2){    // This will give equals
+//         //     System.out.println("Equals");
+//         // }else{
+//         //     System.out.println("Not Equals");
+//         // }
+
+//         // if(s1 == s3){     // This will give not equals because of interning
+//         //     System.out.println("Equals");
+//         // }else{
+//         //     System.out.println("Not Equals");
+//         // }
+
+//         if(s1.equals(s3)){   //This will give equals because equals() only compares value
+//             System.out.println("Equals");
+//         }else{
+//             System.out.println("Not Equals");
+//         }
+//     }
+// }
+
+//SubString 
+
 import java.util.*;
 
-public class Strings{
-    public static void main(String[] args) {
-        String s1 = "Shiva";
-        String s2 = "Shiva";
-        String s3 = new String ("Shiva");
-
-        // if(s1 == s2){    // This will give equals
-        //     System.out.println("Equals");
-        // }else{
-        //     System.out.println("Not Equals");
-        // }
-
-        // if(s1 == s3){     // This will give not equals because of interning
-        //     System.out.println("Equals");
-        // }else{
-        //     System.out.println("Not Equals");
-        // }
-
-
-        if(s1.equals(s3)){   //This will give equals because equals() only compares value
-            System.out.println("Equals");
-        }else{
-            System.out.println("Not Equals");
+public class Strings {
+    public static String subString(String str, int start, int end) {
+        String substr = "";
+        for (int i = 0; i < end; i++) {
+            substr += str.charAt(i);
         }
+
+        return substr;
+    }
+
+    public static void main(String[] args) {
+        String str = "HelloWorld";
+        System.out.println(subString(str, 0, 5));
+
+        //direct inbuilt function
+        System.out.println(str.substring(0, 5));
     }
 }
