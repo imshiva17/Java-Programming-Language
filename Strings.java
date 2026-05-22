@@ -173,23 +173,42 @@
 
 //SubString 
 
-import java.util.*;
+// import java.util.*;
+
+// public class Strings {
+//     public static String subString(String str, int start, int end) {
+//         String substr = "";
+//         for (int i = 0; i < end; i++) {
+//             substr += str.charAt(i);
+//         }
+
+//         return substr;
+//     }
+
+//     public static void main(String[] args) {
+//         String str = "HelloWorld";
+//         System.out.println(subString(str, 0, 5));
+
+//         //direct inbuilt function
+//         System.out.println(str.substring(0, 5));
+//     }
+// }
+
+//For a given set of Strings, print thr largest string
 
 public class Strings {
-    public static String subString(String str, int start, int end) {
-        String substr = "";
-        for (int i = 0; i < end; i++) {
-            substr += str.charAt(i);
-        }
-
-        return substr;
-    }
 
     public static void main(String[] args) {
-        String str = "HelloWorld";
-        System.out.println(subString(str, 0, 5));
+        String fruits[] = { "apple", "mango", "banana" };
 
-        //direct inbuilt function
-        System.out.println(str.substring(0, 5));
+        String largest = fruits[0];
+
+        for (int i = 1; i < fruits.length; i++) {
+            if (largest.compareTo(fruits[i]) < 0) {
+                largest = fruits[i];
+            }
+        }
+
+        System.out.println(largest);
     }
 }
