@@ -100,43 +100,76 @@
 //     }
 // }
 
+
+//Shortest Route
+// import java.util.*;
+
+// public class Strings {
+//     public static float getShortestPath(String path){
+//         int x = 0, y=0;
+
+//         for (int i = 0; i < path.length(); i++) {
+//             char dir = path.charAt(i);
+
+//             //south
+//             if(dir == 'S'){
+//                 y--;
+//             }
+//             //north
+//             else if(dir == 'N'){
+//                 y++;
+//             }
+//             //west
+//             else if(dir == 'W'){
+//                 x--;
+//             }
+//             //east
+//             else{
+//                 x++;
+//             }
+//         }
+
+
+//         int X2 = x*x;
+//         int Y2 = y*y;
+
+//         return (float)Math.sqrt(X2+Y2);
+
+//     }
+
+//     public static void main(String[] args) {
+//         String path = "WNEENESENNN";
+//         System.out.println(getShortestPath(path));
+//     }
+// }
+
+//String Function for compare - equals()
+
 import java.util.*;
 
-public class Strings {
-    public static float getShortestPath(String path){
-        int x = 0, y=0;
-
-        for (int i = 0; i < path.length(); i++) {
-            char dir = path.charAt(i);
-
-            //south
-            if(dir == 'S'){
-                y--;
-            }
-            //north
-            else if(dir == 'N'){
-                y++;
-            }
-            //west
-            else if(dir == 'W'){
-                x--;
-            }
-            //east
-            else{
-                x++;
-            }
-        }
-
-
-        int X2 = x*x;
-        int Y2 = y*y;
-
-        return (float)Math.sqrt(X2+Y2);
-
-    }
-
+public class Strings{
     public static void main(String[] args) {
-        String path = "WNEENESENNN";
-        System.out.println(getShortestPath(path));
+        String s1 = "Shiva";
+        String s2 = "Shiva";
+        String s3 = new String ("Shiva");
+
+        // if(s1 == s2){    // This will give equals
+        //     System.out.println("Equals");
+        // }else{
+        //     System.out.println("Not Equals");
+        // }
+
+        // if(s1 == s3){     // This will give not equals because of interning
+        //     System.out.println("Equals");
+        // }else{
+        //     System.out.println("Not Equals");
+        // }
+
+
+        if(s1.equals(s3)){   //This will give equals because equals() only compares value
+            System.out.println("Equals");
+        }else{
+            System.out.println("Not Equals");
+        }
     }
 }
