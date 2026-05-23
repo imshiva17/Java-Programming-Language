@@ -236,32 +236,62 @@
 
 //For a given String convert each the first letter of each word to uppercase
 
+// import java.util.*;
+
+// public class Strings {
+//     public static String toUpperCase(String str) {
+//         StringBuilder sb = new StringBuilder("");
+
+//         char ch = Character.toUpperCase(str.charAt(0));
+//         sb.append(ch);
+
+//         for (char i = 1; i < str.length(); i++) {
+//             if (str.charAt(i) == ' ' && i < str.length() - 1) {
+//                 sb.append(str.charAt(i));
+//                 i++;
+
+//                 sb.append(Character.toUpperCase(str.charAt(i)));
+
+//             } else {
+//                 sb.append(str.charAt(i));
+//             }
+//         }
+
+//         return sb.toString();
+//     }
+
+//     public static void main(String[] args) {
+//         String str = "hi, i am shiva";
+//         System.out.println(toUpperCase(str));
+//     }
+// }
+
+//String Compression
+
 import java.util.*;
 
 public class Strings {
-    public static String toUpperCase(String str) {
-        StringBuilder sb = new StringBuilder("");
+    public static String compress(String str) {
+        String newStr = "";
 
-        char ch = Character.toUpperCase(str.charAt(0));
-        sb.append(ch);
-
-        for (char i = 1; i < str.length(); i++) {
-            if (str.charAt(i) == ' ' && i < str.length() - 1) {
-                sb.append(str.charAt(i));
+        for (char i = 0; i < str.length(); i++) {
+            Integer count = 1;
+            while (i < str.length() - 1 && str.charAt(i) == str.charAt(i + 1)) {
+                count++;
                 i++;
+            }
 
-                sb.append(Character.toUpperCase(str.charAt(i)));
-
-            } else {
-                sb.append(str.charAt(i));
+            newStr += str.charAt(i);
+            if (count > 1) {
+                newStr += count.toString();
             }
         }
 
-        return sb.toString();
+        return newStr;
     }
 
     public static void main(String[] args) {
-        String str = "hi, i am shiva";
-        System.out.println(toUpperCase(str));
+        String str = "aaabbcccdd";
+        System.out.println(compress(str));
     }
 }
