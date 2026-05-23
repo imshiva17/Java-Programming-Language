@@ -196,19 +196,40 @@
 
 //For a given set of Strings, print thr largest string
 
+// public class Strings {
+
+//     public static void main(String[] args) {
+//         String fruits[] = { "apple", "mango", "banana" };
+
+//         String largest = fruits[0];
+
+//         for (int i = 1; i < fruits.length; i++) {
+//             if (largest.compareTo(fruits[i]) < 0) {
+//                 largest = fruits[i];
+//             }
+//         }
+
+//         System.out.println(largest);
+//     }
+// }
+
+//StringBuilder: Used to create and modify string without creating new object
+//Syntax:
+// StringBuilder sb = new StringBuilder("");
+
+// Ex:
+
+import java.util.*;
+
 public class Strings {
 
     public static void main(String[] args) {
-        String fruits[] = { "apple", "mango", "banana" };
+        StringBuilder sb = new StringBuilder("");
 
-        String largest = fruits[0];
-
-        for (int i = 1; i < fruits.length; i++) {
-            if (largest.compareTo(fruits[i]) < 0) {
-                largest = fruits[i];
-            }
+        for (char i = 'a'; i <= 'z'; i++) {
+            sb.append(i);
         }
 
-        System.out.println(largest);
+        System.out.println(sb);
     }
 }
