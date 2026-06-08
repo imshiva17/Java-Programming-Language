@@ -285,14 +285,14 @@ public class Strings {
             if (count > 1) {
                 newStr += count.toString();
             }
-//         }
+        }
 
-//         return newStr;
-//     }
+        return newStr;
+    }
 
-//     public static void main(String[] args) {
-//         String str = "aaabbcccdd";
-//         System.out.println(compress(str));
-//     }
-// }
+    public static void main(String[] args) {
+        String str = "aaabbcccdd";
+        System.out.println(compress(str));
+    }
+}
 
