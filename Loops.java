@@ -78,7 +78,7 @@
 
 // Print square pattern
 
-import java.util.*;
+// import java.util.*;
 
 // public class Loops {
 //     public static void main(String[] args) {
@@ -147,7 +147,7 @@ import java.util.*;
 
 // Break statement
 
-import java.util.*;
+// import java.util.*;
 
 // public class Loops {
 //     public static void main(String[] args) {
